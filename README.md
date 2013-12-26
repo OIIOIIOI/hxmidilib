@@ -1,8 +1,9 @@
 hxmidilib
 =========
 
-Haxe port of newgonzo's as3midilib for working with MIDI
-(http://code.google.com/p/as3midilib/)
+Haxe port of newgonzo's as3midilib for working with MIDI.
+
+Documentation and samples on the project's page: http://code.google.com/p/as3midilib/
 
 I just ported it to Haxe and made a couple of fixes. Didn't test the receiving of live events yet.
 
