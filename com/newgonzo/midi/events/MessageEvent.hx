@@ -19,7 +19,11 @@ class MessageEvent extends Event {
 	}
 	
 	override public function toString () :String {
+		#if flash
 		return formatToString("MessageEvent", "message");
+		#else 
+		return "MessageEvent:" + super.toString();
+		#end
 	}
 	
 }

@@ -31,8 +31,10 @@ class MIDIDecoder {
 	public function new () { }
 	
 	public function decodeFile (data:ByteArray) :MIDIFile {
-		if (data.readInt() != cast(MIDI_FILE_HEADER_TAG)) {
-			throw new InvalidFormatError("Invalid MIDI header tag: expected 0x4D546864 (MThd)");
+		data.endian = flash.utils.Endian.BIG_ENDIAN;
+		var head = data.readInt();
+		if (head != cast(MIDI_FILE_HEADER_TAG)) {
+			throw new InvalidFormatError("Invalid MIDI header tag: expected 0x4D546864 (MThd) vs :"+	head);
 		}
 		
 		if (data.readInt() != cast(MIDI_FILE_HEADER_SIZE)) {
