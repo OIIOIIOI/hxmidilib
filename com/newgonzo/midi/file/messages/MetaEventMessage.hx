@@ -6,7 +6,7 @@ import com.newgonzo.midi.messages.SystemMessageType;
 
 class MetaEventMessage extends Message {
 	
-	var type(default, null):UInt;
+	public var type(default, null):UInt;
 	
 	public function new (type:UInt) {
 		super(SystemMessageType.SYSTEM_RESET);

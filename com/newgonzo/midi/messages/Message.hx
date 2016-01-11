@@ -2,7 +2,7 @@ package com.newgonzo.midi.messages;
 
 class Message {
 	
-	var status(default, null):UInt;
+	public var status(default, null):UInt;
 	
 	public function new (status:UInt) {
 		this.status = status;
