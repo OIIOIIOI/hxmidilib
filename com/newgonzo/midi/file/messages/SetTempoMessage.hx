@@ -2,8 +2,8 @@ package com.newgonzo.midi.file.messages;
 
 class SetTempoMessage extends MetaEventMessage {
 	
-	var microsecondsPerQuarter(default, null):UInt;
-	var tempo(default, null):UInt;
+	public var microsecondsPerQuarter(default, null):UInt;
+	public var tempo(default, null):UInt;
 	
 	public function new (microsecondsPerQuarter:UInt) {
 		super(MetaEventMessageType.SET_TEMPO);
