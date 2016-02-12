@@ -1,34 +1,38 @@
 package com.newgonzo.midi;
 
-class MIDINote {
+@:enum
+abstract MIDINote(UInt) {
 	
-	public static var C:UInt =			0;
-	public static var C_SHARP:UInt =	1;
-	public static var D:UInt =			2;
-	public static var D_SHARP:UInt =	3;
-	public static var E:UInt =			4;
-	public static var F:UInt =			5;
-	public static var F_SHARP:UInt =	6;
-	public static var G:UInt =			7;
-	public static var G_SHARP:UInt =	8;
-	public static var A:UInt =			9;
-	public static var A_SHARP:UInt =	10;
-	public static var B:UInt =			11;
+	var C 			=	0;
+	var C_SHARP 	=	1;
+	var D 			=	2;
+	var D_SHARP 	=	3;
+	var E 			=	4;
+	var F 			=	5;
+	var F_SHARP 	=	6;
+	var G 			=	7;
+	var G_SHARP 	=	8;
+	var A 			=	9;
+	var A_SHARP 	=	10;
+	var B 			=	11;
 	
-	public static function toString (value:UInt) :String {
-		if (value == C)				return "C";
-		else if (value == C_SHARP)	return "C#";
-		else if (value == D)		return "D";
-		else if (value == D_SHARP)	return "D#";
-		else if (value == E)		return "E";
-		else if (value == F)		return "F";
-		else if (value == F_SHARP)	return "F#";
-		else if (value == G)		return "G";
-		else if (value == G_SHARP)	return "G#";
-		else if (value == A)		return "A";
-		else if (value == A_SHARP)	return "A#";
-		else if (value == B)		return "B";
-		else						return "UNKNOWN";
+	public static function toString( value:MIDINote ) : String {
+		return
+		switch(value){
+			case C			:"C";
+			case C_SHARP	:"C#";
+			case D			:"D";
+			case D_SHARP	:"D#";
+			case E			:"E";
+			case F			:"F";
+			case F_SHARP	:"F#";
+			case G			:"G";
+			case G_SHARP	:"G#";
+			case A			:"A";
+			case A_SHARP	:"A#";
+			case B			:"B";
+			default			:"UNKNOWN";
+		}
 	}
 	
 }

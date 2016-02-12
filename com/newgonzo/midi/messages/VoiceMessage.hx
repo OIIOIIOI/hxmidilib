@@ -6,7 +6,7 @@ class VoiceMessage extends ChannelMessage {
 	
 	public var octave(get, never):Int;
 	public var pitch(get, never):UInt;
-	public var note(get, never):UInt;
+	public var note(get, never): MIDINote;
 	public var velocity(get, never):UInt;
 	
 	public function new (status:Int, channel:Int, data1:Int = 0, data2:Int = 0) {
@@ -21,8 +21,8 @@ class VoiceMessage extends ChannelMessage {
 		return cast(data1, UInt);
 	}
 	
-	function get_note () :UInt {
-		return pitch % 12;
+	function get_note () : MIDINote {
+		return cast( pitch % 12, MIDINote );
 	}
 	
 	function get_velocity () :UInt {
