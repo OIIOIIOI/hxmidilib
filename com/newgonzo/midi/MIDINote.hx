@@ -1,20 +1,24 @@
 package com.newgonzo.midi;
 
 @:enum
-abstract MIDINote(UInt) {
+abstract MIDINote(UInt) from UInt{
 	
-	var C 			=	0;
-	var C_SHARP 	=	1;
-	var D 			=	2;
-	var D_SHARP 	=	3;
-	var E 			=	4;
-	var F 			=	5;
-	var F_SHARP 	=	6;
-	var G 			=	7;
-	var G_SHARP 	=	8;
-	var A 			=	9;
-	var A_SHARP 	=	10;
-	var B 			=	11;
+	inline var C 			=	0;
+	inline var C_SHARP 		=	1;
+	inline var D 			=	2;
+	inline var D_SHARP 		=	3;
+	inline var E 			=	4;
+	inline var F 			=	5;
+	inline var F_SHARP 		=	6;
+	inline var G 			=	7;
+	inline var G_SHARP 		=	8;
+	inline var A 			=	9;
+	inline var A_SHARP 		=	10;
+	inline var B 			=	11;
+	
+	public function toUInt() : UInt {
+		return cast this;
+	}
 	
 	public static function toString( value:MIDINote ) : String {
 		return
