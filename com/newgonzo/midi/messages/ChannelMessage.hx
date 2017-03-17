@@ -2,7 +2,7 @@ package com.newgonzo.midi.messages;
 
 class ChannelMessage extends DataMessage {
 	
-	var channel(default, null):Int;
+	public var channel(default, null):Int;
 	
 	public function new (status:Int, channel:Int, data1:Int = 0, data2:Int = 0) {
 		super(status, data1, data2);
