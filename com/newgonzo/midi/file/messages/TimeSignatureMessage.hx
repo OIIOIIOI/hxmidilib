@@ -4,11 +4,11 @@ import com.newgonzo.midi.messages.Message;
 
 class TimeSignatureMessage extends MetaEventMessage {
 	
-	var numerator(default, null):UInt;
-	var denominator(default, null):UInt;
+	public var numerator(default, null):UInt;
+	public var denominator(default, null):UInt;
 	
-	var clocksPerBeat(default, null):UInt;
-	var thirtySecondthsPerQuarter(default, null):UInt;
+	public var clocksPerBeat(default, null):UInt;
+	public var thirtySecondthsPerQuarter(default, null):UInt;
 	
 	public function new (numerator:UInt, denominator:UInt, clocksPerBeat:UInt, thirtySecondthsPerQuarter:UInt) {
 		super(MetaEventMessageType.TIME_SIGNATURE);
