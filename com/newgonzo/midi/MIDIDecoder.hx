@@ -30,6 +30,7 @@ class MIDIDecoder {
 	
 	public function new () { }
 	
+	@:noDebug
 	public function decodeFile (data:ByteArray) :MIDIFile {
 		data.endian = flash.utils.Endian.BIG_ENDIAN;
 		var head = data.readInt();
