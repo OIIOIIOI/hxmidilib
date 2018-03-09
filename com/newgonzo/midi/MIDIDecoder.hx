@@ -68,7 +68,6 @@ class MIDIDecoder {
 		
 		for (i in 0...numTracks) {
 			events = new Array<MIDITrackEvent>();
-			
 			trackHeader = data.readInt();
 			
 			// last byte might be a null byte
@@ -99,6 +98,7 @@ class MIDIDecoder {
 			
 			track = new MIDITrack(events);
 			tracks.push(track);
+			data.position = trackEnd;
 		}
 		
 		return new MIDIFile(format, timeDivision, tracks);
